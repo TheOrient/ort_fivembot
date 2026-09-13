@@ -1,51 +1,50 @@
-# ort_fivembot
-This is my old project. Fivem game-bot. I created it in 2019 using the esx-disc based fivem server infrastructure.
+# ORT FiveM Management Bot
 
+> **Legacy project** — originally created in 2019 for ESX-based FiveM servers.
 
-Discord üzerinden ESX altyapılı fivem sunucunuz için Server yönetimini sağlayan, Triggereventleri çalıştıran ve birçok  komutu yapabilmenizi sağlayan bir discord botu.
+ORT FiveM Management Bot is an early Discord-integrated administration project built for a FiveM server environment. It connected Discord-based staff workflows with server-side ESX functionality and custom game events.
 
-ESX Altyapısına göre 2019 yılında yapılmış bir bottur. Lua kullanılmıştır.
-TriggerServerEventleri çalıştırmanızı sağlayan, Server side herşeyi yapabildiğiniz oyun dışından oyuncunun SS ini almaya kadar tüm komutları çalıştırabileceğiniz bir projedir. Bu proje ile offline olarak oyuna girmeden game staff ihtiyacı olmadan hemen hemen herşeyi discord komutları ile yapabilirsiniz.
-Detaylı bir komut sistemi vardır.
+## Project Highlights
 
-ÖNEMLİ NOT: Bazı eventleri kendi admin panelinize ve paketinize göre yapmanız gerekiyor örn.
-TriggerClientEvent('ort_admin_server:captureScreenshot', target, GetPlayerName(yazi[2]), yazi[2])  client event inde ki event ismini vs. değiştirin.
+- Discord-based server administration workflow
+- ESX integration
+- Player-management utilities
+- Server-status reporting
+- Job and inventory related administration
+- Restart announcements
+- Custom server/client event integration
+- Remote staff tooling designed for the original server environment
 
-NOT: Bu projeyi Open-Source olarak, 18.10.2025 yılında PUBLIC olarak TheOrient github hesabımda yayınlıyorum. Bot esx-disc envantere göre 2019-2020 yılları arasında yapılmıştır. Dolayısı ile günümüzde kullanılan QBase QB altyapıya göre uyarlayabilirsiniz. Tek yapmanız gereken Triggerevent leri değiştirmek kodları güncellemek. 
+## Tech Stack
 
+- Lua
+- FiveM
+- ESX
+- Discord integration
 
-KURULUM
+## Configuration
 
-resources klasörüne atın
-sv.lua baştaki configleri yapın
-server.cfg den ensure yada start verin
+The original implementation keeps its server-specific configuration and integrations in `sv.lua`. Anyone reviewing or adapting the project should replace the original environment-specific values, event names, permissions, and framework calls with equivalents from their own stack.
 
+## Modernization Notes
 
-AYARLAMALAR-CONFIG
+This repository was built against an older ESX/esx-disc ecosystem. Modern FiveM projects may use substantially different APIs and architecture.
 
-sv.lua baştaki configleri yapın
-TOKEN, channel id vs güncelleyin
+Areas that would require review today include:
 
+- authentication and authorization
+- Discord API/library integration
+- framework exports and callbacks
+- inventory and job APIs
+- custom server/client events
+- structured logging
+- error handling
+- secrets management
 
-KOMUTLAR
+## Security
 
-!ort.durum --- Sunucu durumunu gösterir
-!ort.kick id --- oyuncuyu kickler
-!ort.itemver id itemkodu miktar --- oyuncuya item verir silah dahil örn: WEAPON_PISTOL 
-!ort.meslekver id meslekkodu seviye --- oyuncuya meslek verir
-!ort.paraver id miktar --- oyuncuya nakit verir 
-!ort.öldür id --- oyuncuyu öldürür
-!ort.rev id --- oyuncuyu revler
-!ort.can id --- oyuncuyu healler
-!ort.kelepçe id --- oyuncuyu kelepçeler
-!ort.dondur id --- oyuncuyu dondurur
-!ort.çöz id --- dondurulmuş bir oyuncuyu çözer
-!ort.restartduyuru --- Sunucuya Restart Atılacaktır! Lütfen Sunucudan Çıkış Yapalım. duyurusu atar. 
+This project performs privileged administrative operations. A modern implementation should use strict role-based authorization, keep tokens and credentials outside source control, validate every administrative request, and maintain detailed audit logs.
 
+## Legacy Notice
 
-CREATED BY Orient. Copying, distribution and commercial use are prohibited.
-ORİENT Tarafından yapılmıştır. Kopyalanması, dağıtılması ve ticari amaçlı kullanılması yasaktır.
-
-Beni takip etmeyi ve starlamayı unutmayın. Kullanımı ücretsizdir ancak pazarlanması yasaktır.
-
-DC: byorient
+This repository is preserved as part of my development history. It demonstrates an early integration between Discord automation and game-server administration, but it is not presented as a production-ready modern administration platform.
